@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">AKUProjectAssignment</string>
+
+
+    <!--login-->
+    <string name="email_field_hint">Enter your email</string>
+    <string name="password_field_hint">Enter your password</string>
+    <string name="email_field_empty">Email can\'t be empty</string>
+    <string name="password_field_empty">Password can\'t be empty</string>
+    <string name="email_field_invalid">Not a valid email</string>
+    <string name="password_field_small_length">Password less than 6 digits</string>
+    <string name="login_button_text">Login</string>
+
+
+    <!--Resident-->
+    <string name="serial_num_field_hint">Enter Serial Number</string>
+    <string name="name_field_hint">Enter Resident Name</string>
+    <string name="fname_field_hint">Enter Father Name</string>
+    <string name="mname_field_hint">Enter Mother Name</string>
+
+    <string name="address_field_hint">Enter Address</string>
+    <string name="mobile_field_hint">Enter Mobile Num</string>
+    <string name="dob_field_hint">Date of birth</string>
+    <string name="age_field_hint">Age (in years)</string>
+
+    <string name="num_children">How many children do you have ?</string>
+
+
+</resources>
