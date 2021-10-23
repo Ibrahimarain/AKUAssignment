@@ -10,8 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AKUProjectAssignment">
-        <activity android:name=".ui.summary.DashboardActivity"></activity>
-        <activity android:name=".ui.residentlist.ResidentListActivity" />
+        <activity android:name=".ui.summary.DashboardActivity"
+            android:parentActivityName=".ui.home.HomeActivity"
+
+            ></activity>
+        <activity android:name=".ui.residentlist.ResidentListActivity"
+            android:parentActivityName=".ui.home.HomeActivity"
+            />
         <activity
             android:name=".ui.survey.ResidentQuestionsActivity"
             android:parentActivityName=".ui.survey.AddResidentActivity" />

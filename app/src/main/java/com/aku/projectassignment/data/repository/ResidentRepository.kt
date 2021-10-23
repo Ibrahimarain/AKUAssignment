@@ -15,7 +15,20 @@ class ResidentRepository @Inject constructor
         fun addResident(residentToAdd : ResidentEntity) =
         databaseService.residentDao().addResident(residentToAdd)
 
-        fun storeInitialData(residentToStore : ResidentEntity) =
+        fun getAllResident() =
+        databaseService.residentDao().getAllResident()
+
+         fun getMaleResidentCount() =
+         databaseService.residentDao().getMaleCount()
+
+         fun getFemaleResidentCount() =
+         databaseService.residentDao().getFemaleCount()
+
+        fun getMarriedStatusCount() =
+        databaseService.residentDao().getMarriedCount()
+
+
+   fun storeInitialData(residentToStore : ResidentEntity) =
         userPreferences.setInitialResident(gson.toJson(residentToStore))
 
         fun getInitialData() =

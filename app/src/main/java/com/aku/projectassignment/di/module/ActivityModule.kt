@@ -3,6 +3,7 @@ package com.aku.projectassignment.di.module
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.aku.projectassignment.data.local.db.DatabaseService
 import com.aku.projectassignment.data.repository.ResidentRepository
 import com.aku.projectassignment.data.repository.UserRepository
@@ -11,7 +12,10 @@ import com.aku.projectassignment.ui.base.BaseActivity
 import com.aku.projectassignment.ui.home.HomeViewModel
 import com.aku.projectassignment.ui.locality.LocalityViewModel
 import com.aku.projectassignment.ui.login.LoginViewModel
+import com.aku.projectassignment.ui.residentlist.ResidentListAdapter
+import com.aku.projectassignment.ui.residentlist.ResidentListViewModel
 import com.aku.projectassignment.ui.splash.SplashViewModel
+import com.aku.projectassignment.ui.summary.DashboardViewModel
 import com.aku.projectassignment.ui.survey.AddResidentViewModel
 import com.aku.projectassignment.utils.factory.ViewModelProviderFactory
 import dagger.Module
@@ -28,7 +32,8 @@ class ActivityModule(private val activity : BaseActivity<*>) {
 
     @Provides
     fun provideResidentViewModel(compositeDisposable: CompositeDisposable,
-                                 residentRepository: ResidentRepository, userRepository: UserRepository) : AddResidentViewModel{
+                                 residentRepository: ResidentRepository, userRepository:
+                                 UserRepository) : AddResidentViewModel{
         return ViewModelProviders.of(activity,
             ViewModelProviderFactory(AddResidentViewModel::class){
                 AddResidentViewModel(compositeDisposable,residentRepository,userRepository)
@@ -73,5 +78,33 @@ class ActivityModule(private val activity : BaseActivity<*>) {
         LocalityViewModel( compositeDisposable, userRepository)
     }).get(LocalityViewModel::class.java)
 
+    @Provides
+    fun provideResidentListViewModel(compositeDisposable: CompositeDisposable,
+                                 residentRepository: ResidentRepository,
+                                     userRepository: UserRepository) : ResidentListViewModel{
+        return ViewModelProviders.of(activity,
+            ViewModelProviderFactory(ResidentListViewModel::class){
+                ResidentListViewModel(compositeDisposable,residentRepository,userRepository)
+            }).get(ResidentListViewModel::class.java)
+    }
+
+    @Provides
+    fun provideDashboardViewModel(compositeDisposable: CompositeDisposable,
+                                     residentRepository: ResidentRepository,
+                                     userRepository: UserRepository) : DashboardViewModel{
+        return ViewModelProviders.of(activity,
+            ViewModelProviderFactory(DashboardViewModel::class){
+                DashboardViewModel(compositeDisposable,residentRepository,userRepository)
+            }).get(DashboardViewModel::class.java)
+    }
+
+
+
+    @Provides
+    fun provideLinearLayoutManager(): LinearLayoutManager = LinearLayoutManager(activity)
+
+
+    @Provides
+    fun provideResidentListAdapter() = ResidentListAdapter(activity.lifecycle, ArrayList())
 
 }

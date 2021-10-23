@@ -1,16 +1,15 @@
 package com.aku.projectassignment.ui.survey
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
+import android.view.View
+import android.view.ViewGroup
+import android.widget.EditText
 import com.aku.projectassignment.R
 import com.aku.projectassignment.di.component.ActivityComponent
 import com.aku.projectassignment.ui.base.BaseActivity
-import com.aku.projectassignment.ui.home.HomeActivity
-import com.aku.projectassignment.utils.common.Event
-import com.aku.projectassignment.utils.display.Toaster
 import kotlinx.android.synthetic.main.activity_add_resident.*
+
 
 class AddResidentActivity : BaseActivity<AddResidentViewModel>() {
 
@@ -25,13 +24,15 @@ class AddResidentActivity : BaseActivity<AddResidentViewModel>() {
         supportActionBar?.title = "Add Resident"
         btn_next.setOnClickListener{
             viewModel.onNext(
-                    et_serial_num.text.toString(),
-                    et_resident_name.text.toString(),et_fname.text.toString(),
-                    et_mname.text.toString(),et_res_address.text.toString(),
-                    et_mobile_num.text.toString(),et_age.text.toString(),
+                et_serial_num.text.toString(),
+                et_resident_name.text.toString(), et_fname.text.toString(),
+                et_mname.text.toString(), et_res_address.text.toString(),
+                et_mobile_num.text.toString(), et_age.text.toString(),
             )
 
         }
+
+
     }
 
     override fun setupObservers() {
@@ -39,6 +40,7 @@ class AddResidentActivity : BaseActivity<AddResidentViewModel>() {
 
         viewModel.launchQuestions.observe(this, {
             it.getIfNotHandled()?.run {
+                clearForm(mainParent)
                 startActivity(Intent(applicationContext, ResidentQuestionsActivity::class.java))
             }
         })
@@ -47,6 +49,26 @@ class AddResidentActivity : BaseActivity<AddResidentViewModel>() {
 
     }
 
+
+    private fun clearForm(group: ViewGroup) {
+        var i = 0
+        val count = group.childCount
+        while (i < count) {
+            val view: View = group.getChildAt(i)
+            if (view is EditText) {
+                (view as EditText).setText("")
+            }
+            if (view is ViewGroup && (view as ViewGroup).childCount > 0) clearForm(view as ViewGroup)
+            ++i
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        et_age.setText("0")
+        et_serial_num.setText("000")
+
+    }
 
 }
 

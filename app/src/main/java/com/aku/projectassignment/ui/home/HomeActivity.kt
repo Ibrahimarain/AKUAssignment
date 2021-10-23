@@ -1,20 +1,14 @@
 package com.aku.projectassignment.ui.home
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import com.aku.projectassignment.R
 import com.aku.projectassignment.di.component.ActivityComponent
 import com.aku.projectassignment.ui.base.BaseActivity
-import com.aku.projectassignment.ui.base.BaseViewModel
 import com.aku.projectassignment.ui.locality.LocalityActivity
 import com.aku.projectassignment.ui.residentlist.ResidentListActivity
 import com.aku.projectassignment.ui.summary.DashboardActivity
 import com.aku.projectassignment.ui.survey.AddResidentActivity
-import com.aku.projectassignment.utils.common.Event
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 

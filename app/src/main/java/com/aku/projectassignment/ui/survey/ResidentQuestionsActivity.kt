@@ -3,6 +3,8 @@ package com.aku.projectassignment.ui.survey
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
+import android.view.View
 import android.widget.ArrayAdapter
 import com.aku.projectassignment.R
 import com.aku.projectassignment.data.local.Constants
@@ -39,10 +41,8 @@ class ResidentQuestionsActivity : BaseActivity<AddResidentViewModel>(){
         occupation_spinner.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,
             Constants.occupation)
 
-        et_date_of_birth.setOnClickListener{
-
+        et_date_of_birth.setOnClickListener(){ view: View->
             datePicker.show(supportFragmentManager,"DOB")
-
         }
 
         datePicker.addOnPositiveButtonClickListener {
@@ -72,6 +72,8 @@ class ResidentQuestionsActivity : BaseActivity<AddResidentViewModel>(){
 
         viewModel.launchBackAddResident.observe(this, {
             onBackPressed()
+
+
         })
     }
 

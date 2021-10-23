@@ -21,6 +21,20 @@ interface ResidentDao {
     @Query("Select Count(*) from tbl_resident where gender = 2")
     fun getFemaleCount() : Single<Int>
 
+
+    @Query("Select Count(*) from tbl_resident where ageInYears > 14 AND maritalStatus = 1")
+    fun getUnMarriedCount() : Single<Int>
+
+    @Query("Select Count(*) from tbl_resident where ageInYears > 14 AND maritalStatus = 2")
+    fun getMarriedCount() : Single<Int>
+
+    @Query("Select Count(*) from tbl_resident where ageInYears > 14 AND maritalStatus = 3")
+    fun getDivorcedCount() : Single<Int>
+
+    @Query("Select Count(*) from tbl_resident where ageInYears > 14 AND maritalStatus = 4")
+    fun getWidowCount() : Single<Int>
+
+
     @Query("Select Count(*) from tbl_resident")
     fun geCount() : Single<Int>
 

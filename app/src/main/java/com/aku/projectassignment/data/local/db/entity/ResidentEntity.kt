@@ -40,7 +40,7 @@ data class ResidentEntity(
 
     @ColumnInfo(name = "ageInYears")
     @NotNull
-    var ageInYears: String = "",
+    var ageInYears: Int = 0,
 
     @ColumnInfo(name = "gender")
     @NotNull

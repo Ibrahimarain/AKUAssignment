@@ -177,6 +177,7 @@
                     android:maxLength="250"
                     android:textSize="16sp"
                     android:editable="false"
+                    android:focusable="false"
                     android:text="@string/dob_field_hint"
 
                     />

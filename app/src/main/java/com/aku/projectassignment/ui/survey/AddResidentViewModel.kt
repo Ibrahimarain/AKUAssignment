@@ -34,7 +34,7 @@ class AddResidentViewModel (private val compositeDisposable: CompositeDisposable
         residentEntity.motherName = mName
         residentEntity.address = address
         residentEntity.mobileNum = mobileNum
-        residentEntity.ageInYears = age
+        residentEntity.ageInYears = age.toInt()
 
         residentRepository.storeInitialData(residentEntity)
         launchQuestions.postValue(Event(emptyMap()))
@@ -77,9 +77,6 @@ class AddResidentViewModel (private val compositeDisposable: CompositeDisposable
                 }))
 
     }
-
-
-
 
 
     override fun onCleared() {
