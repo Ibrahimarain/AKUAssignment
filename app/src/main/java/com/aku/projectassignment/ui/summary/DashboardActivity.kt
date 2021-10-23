@@ -32,12 +32,25 @@ class DashboardActivity : BaseActivity<DashboardViewModel>(){
             it?.run { tv_female_count.text = "Total Female in Population: $it" }
         })
 
-        viewModel.getMarriedCount().observe(this,  {
-            it?.run { tv_married_count.text = "Total Married Residents: $it" }
+        viewModel.getMaritalCount().observe(this,  {
+            it?.run {
+                tv_unmarried_count.text = "Total Unmarried Residents: ${it.unmarried_count}"
+                tv_married_count.text = "Total Married Residents: ${it.married_count}"
+                tv_divorced_count.text = "Total Married Residents: ${it.divorced_count}"
+                tv_widow_count.text = "Total Married Residents: ${it.widow_count}"
+
+            }
         })
 
+        viewModel.getLocalityCount().observe(this,  {
+            it?.run {
+                tv_count_sindh.text = "Total Residents in Sindh: ${it.sindh_count}"
+                tv_count_punjab.text = "Total Residents in Punjab: ${it.punjab_count}"
+                tv_count_karachi.text = "Total Residents in Karachi: ${it.karachi_count}"
+                tv_count_lahore.text = "Total Residents in Lahore: ${it.lahore_count}"
 
-
+            }
+        })
 
     }
 

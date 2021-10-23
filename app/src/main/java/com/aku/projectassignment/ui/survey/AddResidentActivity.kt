@@ -57,6 +57,7 @@ class AddResidentActivity : BaseActivity<AddResidentViewModel>() {
             val view: View = group.getChildAt(i)
             if (view is EditText) {
                 (view as EditText).setText("")
+                (view as EditText).clearFocus()
             }
             if (view is ViewGroup && (view as ViewGroup).childCount > 0) clearForm(view as ViewGroup)
             ++i
@@ -65,8 +66,8 @@ class AddResidentActivity : BaseActivity<AddResidentViewModel>() {
 
     override fun onResume() {
         super.onResume()
-        et_age.setText("0")
-        et_serial_num.setText("000")
+        et_age.setText("")
+        et_serial_num.setText("")
 
     }
 

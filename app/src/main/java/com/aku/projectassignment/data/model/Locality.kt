@@ -13,18 +13,39 @@ data class Locality(
 
 
 ){
-
-
     init {
 
         val t0 = Tehsil(0,"Select Tehsil")
         tehsilListKarachi.add(t0)
 
-        val t1 = Tehsil(11,"haidri")
-        tehsilListKarachi.add(t1)
+        val haidri = Tehsil(11,"haidri")
+        tehsilListKarachi.add(haidri)
 
-        val t2 = Tehsil(12,"Sakhi Hassan")
-        tehsilListKarachi.add(t2)
+        val SakhiHassan = Tehsil(12,"Sakhi Hassan")
+        tehsilListKarachi.add(SakhiHassan)
+
+        val BufferZone = Tehsil(13,"Buffer Zone")
+        tehsilListKarachi.add(BufferZone)
+
+        val AyeshaManzil = Tehsil(14,"Ayesha Manzil")
+        tehsilListKarachi.add(AyeshaManzil)
+
+        val Azizabad = Tehsil(15,"Azizabad")
+        tehsilListKarachi.add(Azizabad)
+
+        val Karimabad = Tehsil(16,"Karimabad")
+        tehsilListKarachi.add(Karimabad)
+
+        val LiaqatAbad = Tehsil(17,"Liaqat Abad")
+        tehsilListKarachi.add(LiaqatAbad)
+
+        val PaposhNagar = Tehsil(18,"Paposh Nagar")
+        tehsilListKarachi.add(PaposhNagar)
+
+        val Nazimabad = Tehsil(19,"Nazimabad")
+        tehsilListKarachi.add(Nazimabad)
+
+
 
         val d0 = District(0,"Select District", ArrayList())
         val karachi = District(1,"Karachi", tehsilListKarachi)
@@ -44,6 +65,29 @@ data class Locality(
 
         val shalamar = Tehsil(22,"Shalamar")
         tehsilListLahore.add(shalamar)
+
+        val Wahga = Tehsil(23,"Wahga")
+        tehsilListLahore.add(Wahga)
+
+        val AzizBhatti = Tehsil(24,"Aziz Bhatti")
+        tehsilListLahore.add(AzizBhatti)
+
+        val DataGunjBuksh = Tehsil(25,"Data Gunj Buksh")
+        tehsilListLahore.add(DataGunjBuksh)
+
+        val Gulberg = Tehsil(26,"Gulberg")
+        tehsilListLahore.add(Gulberg)
+
+
+        val Samanabad = Tehsil(27,"Samanabad")
+        tehsilListLahore.add(Samanabad)
+
+        val Iqbal = Tehsil(28,"Iqbal")
+        tehsilListLahore.add(Iqbal)
+
+        val Nishtar = Tehsil(29,"Nishtar")
+        tehsilListLahore.add(Nishtar)
+
 
         val lahore = District(2,"Lahore", tehsilListLahore)
         districtListPunjab.add(d0)

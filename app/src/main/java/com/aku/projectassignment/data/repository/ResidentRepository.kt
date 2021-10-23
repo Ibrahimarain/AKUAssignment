@@ -18,14 +18,22 @@ class ResidentRepository @Inject constructor
         fun getAllResident() =
         databaseService.residentDao().getAllResident()
 
+        fun getFilteredResident(gender : List<Int>, maritalStatus: List<Int>) =
+        databaseService.residentDao().getFilteredResident(gender,maritalStatus)
+
          fun getMaleResidentCount() =
          databaseService.residentDao().getMaleCount()
 
          fun getFemaleResidentCount() =
          databaseService.residentDao().getFemaleCount()
 
-        fun getMarriedStatusCount() =
-        databaseService.residentDao().getMarriedCount()
+        fun getLocalityWiseCount() =
+        databaseService.residentDao().getLocalityWiseCount()
+
+        fun getMaritalStatusCount() =
+        databaseService.residentDao().getUnMaritalCount()
+
+
 
 
    fun storeInitialData(residentToStore : ResidentEntity) =
@@ -37,3 +45,4 @@ class ResidentRepository @Inject constructor
 
 
 }
+

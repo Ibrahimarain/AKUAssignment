@@ -28,8 +28,6 @@ class HomeViewModel (
         }else{
             launchAddLocality.postValue(Event(emptyMap()))
         }
-
-
     }
 
     fun onChangeLocality(){
@@ -38,13 +36,15 @@ class HomeViewModel (
 
     fun residentDidTapped(){
         launchResidentList.postValue(Event(emptyMap()))
-
-
-
     }
 
     fun summaryDidTapped(){
         launchSummary.postValue(Event(emptyMap()))
+    }
+
+    fun logoutTapped(){
+        messageString.postValue("User Logged Out")
+        userRepository.removeCurrentUser()
     }
 
 }

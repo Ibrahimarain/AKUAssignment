@@ -40,7 +40,6 @@
             android:lines="1"
             android:maxLength="250"
             android:textSize="16sp"
-            android:text="ibrahimarain15@gmail.com"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -67,7 +66,6 @@
             android:layout_marginTop="10dp"
             android:maxLength="50"
             android:textSize="16sp"
-            android:text="123456"
             />
 
     </com.google.android.material.textfield.TextInputLayout>

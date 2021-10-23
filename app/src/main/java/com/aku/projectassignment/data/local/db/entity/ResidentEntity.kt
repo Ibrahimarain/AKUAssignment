@@ -12,6 +12,10 @@ data class ResidentEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     @NotNull
+    var id: Long = 0,
+
+    @ColumnInfo(name = "serialNum")
+    @NotNull
     var serialNum: Long = 0,
 
     @ColumnInfo(name = "name")
@@ -79,4 +83,32 @@ data class ResidentEntity(
     var tehsil: Int = 0,
 
 
+)
+
+data class MaritalCount(
+    @ColumnInfo(name = "married_count")
+    val married_count: Int,
+
+    @ColumnInfo(name = "unmarried_count")
+    val unmarried_count: Int,
+
+    @ColumnInfo(name = "divorced_count")
+    val divorced_count: Int,
+
+    @ColumnInfo(name = "widow_count")
+    val widow_count: Int
+)
+
+data class LocalityCount(
+    @ColumnInfo(name = "sindh_count")
+    val sindh_count: Int,
+
+    @ColumnInfo(name = "punjab_count")
+    val punjab_count: Int,
+
+    @ColumnInfo(name = "karachi_count")
+    val karachi_count: Int,
+
+    @ColumnInfo(name = "lahore_count")
+    val lahore_count: Int
 )

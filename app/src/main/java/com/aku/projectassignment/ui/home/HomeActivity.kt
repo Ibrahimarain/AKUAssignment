@@ -6,6 +6,7 @@ import com.aku.projectassignment.R
 import com.aku.projectassignment.di.component.ActivityComponent
 import com.aku.projectassignment.ui.base.BaseActivity
 import com.aku.projectassignment.ui.locality.LocalityActivity
+import com.aku.projectassignment.ui.login.LoginActivity
 import com.aku.projectassignment.ui.residentlist.ResidentListActivity
 import com.aku.projectassignment.ui.summary.DashboardActivity
 import com.aku.projectassignment.ui.survey.AddResidentActivity
@@ -30,6 +31,18 @@ class HomeActivity : BaseActivity<HomeViewModel>() {
         btnSummary.setOnClickListener { viewModel.summaryDidTapped() }
 
         supportActionBar?.title = "Home"
+
+        imageViewLogout.setOnClickListener {
+            viewModel.logoutTapped()
+            finish()
+        }
+
+        textViewLogout.setOnClickListener {
+            viewModel.logoutTapped()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
 
     }
 

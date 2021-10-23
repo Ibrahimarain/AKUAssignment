@@ -3,6 +3,8 @@ package com.aku.projectassignment.ui.summary
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import com.aku.projectassignment.data.local.db.entity.LocalityCount
+import com.aku.projectassignment.data.local.db.entity.MaritalCount
 import com.aku.projectassignment.data.repository.ResidentRepository
 import com.aku.projectassignment.data.repository.UserRepository
 import com.aku.projectassignment.ui.base.BaseViewModel
@@ -18,7 +20,8 @@ class DashboardViewModel (
 
     private val maleCountLiveData: MutableLiveData<Resource<Int>> = MutableLiveData()
     private val femaleCountLiveData: MutableLiveData<Resource<Int>> = MutableLiveData()
-    private val marriedCountLiveData: MutableLiveData<Resource<Int>> = MutableLiveData()
+    private val maritalCountLiveData: MutableLiveData<Resource<MaritalCount>> = MutableLiveData()
+    private val localityCountLiveData: MutableLiveData<Resource<LocalityCount>> = MutableLiveData()
 
 
     fun getMaleCount(): LiveData<Int> =
@@ -27,8 +30,12 @@ class DashboardViewModel (
     fun getFemaleCount(): LiveData<Int> =
         Transformations.map(femaleCountLiveData) { it.data }
 
-    fun getMarriedCount(): LiveData<Int> =
-        Transformations.map(marriedCountLiveData) { it.data }
+    fun getMaritalCount(): LiveData<MaritalCount> =
+        Transformations.map(maritalCountLiveData) { it.data }
+
+    fun getLocalityCount(): LiveData<LocalityCount> =
+        Transformations.map(localityCountLiveData) { it.data }
+
 
     override fun onCreate() {
 
@@ -54,13 +61,24 @@ class DashboardViewModel (
         )
 
         compositeDisposable.add(
-            residentRepository.getMarriedStatusCount()
+            residentRepository.getMaritalStatusCount()
                 .subscribeOn(Schedulers.io())
                 .subscribe(
-                    { marriedCountLiveData.postValue(Resource.success(it)) },
+                    { maritalCountLiveData.postValue(Resource.success(it)) },
 
                     {
-                        marriedCountLiveData.postValue(Resource.error())
+                        maritalCountLiveData.postValue(Resource.error())
+                    })
+        )
+
+        compositeDisposable.add(
+            residentRepository.getLocalityWiseCount()
+                .subscribeOn(Schedulers.io())
+                .subscribe(
+                    { localityCountLiveData.postValue(Resource.success(it)) },
+
+                    {
+                        localityCountLiveData.postValue(Resource.error())
                     })
         )
 

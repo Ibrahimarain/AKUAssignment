@@ -26,6 +26,28 @@ class AddResidentViewModel (private val compositeDisposable: CompositeDisposable
     fun onNext(serialNum: String,name: String, fname: String,
                mName: String,address: String, mobileNum: String,
                age: String){
+
+
+        if (serialNum.isEmpty()){
+            messageString.postValue("Please Enter Serial Number")
+            return
+        }
+
+        if (name.isEmpty()){
+            messageString.postValue("Please Enter Name")
+            return
+        }
+
+        if (fname.isEmpty()){
+            messageString.postValue("Please Enter Father Name")
+            return
+        }
+
+        if (age.isEmpty()){
+            messageString.postValue("Please Enter Resident Age")
+            return
+        }
+
         var residentEntity = ResidentEntity()
 
         residentEntity.serialNum = serialNum.toLong()
@@ -45,6 +67,21 @@ class AddResidentViewModel (private val compositeDisposable: CompositeDisposable
                  pregnant: Int,numOfchildren: String,
                  dob: String,education: Int,
                  occupation: Int){
+
+        if (numOfchildren.isEmpty()){
+            messageString.postValue("Please Enter Number of Children")
+            return
+        }
+
+        if (education ==  0){
+            messageString.postValue("Please Enter Education")
+            return
+        }
+
+        if (occupation == 0){
+            messageString.postValue("Please Enter Occupation")
+            return
+        }
 
         var residentEntity = residentRepository.getInitialData()
 

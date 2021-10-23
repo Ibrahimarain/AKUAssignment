@@ -58,42 +58,90 @@
 
                 />
 
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                tools:text="Marital Count : "-->
-<!--                android:id="@+id/tv_unmarried_count"-->
-<!--                android:padding="10dp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/colorAccent"-->
-<!--                android:textSize="16dp"-->
+            <TextView
+                android:id="@+id/tv_unmarried_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Marital Count : "
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
 
-<!--                />-->
+                />
 
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                tools:text="Marital Count : "-->
-<!--                android:id="@+id/tv_divorced_count"-->
-<!--                android:padding="10dp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/colorAccent"-->
-<!--                android:textSize="16dp"-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Marital Count : "
+                android:id="@+id/tv_divorced_count"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
 
-<!--                />-->
+                />
 
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                tools:text="Marital Count : "-->
-<!--                android:id="@+id/tv_widow_count"-->
-<!--                android:padding="10dp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/colorAccent"-->
-<!--                android:textSize="16dp"-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Marital Count : "
+                android:id="@+id/tv_widow_count"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
 
-<!--                />-->
+                />
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Marital Count : "
+                android:id="@+id/tv_count_sindh"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/redLight"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:id="@+id/tv_count_punjab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Marital Count : "
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/redLight"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Marital Count : "
+                android:id="@+id/tv_count_karachi"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/redLight"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Marital Count : "
+                android:id="@+id/tv_count_lahore"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/redLight"
+                android:textSize="16dp"
+
+                />
 
 
 

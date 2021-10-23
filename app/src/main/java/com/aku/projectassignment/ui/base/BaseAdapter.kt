@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 abstract class BaseAdapter<T : Any, VH : BaseItemViewHolder<T, out BaseItemViewModel<T>>>(
     parentLifecycle: Lifecycle,
-    private val dataList: ArrayList<T>
+    private var dataList: ArrayList<T>
 ) : RecyclerView.Adapter<VH>() {
 
     private var recyclerView: RecyclerView? = null
@@ -94,4 +94,10 @@ abstract class BaseAdapter<T : Any, VH : BaseItemViewHolder<T, out BaseItemViewM
         else if (oldCount > 0 && currentCount > oldCount)
             notifyItemRangeChanged(oldCount - 1, currentCount - oldCount)
     }
+
+    fun swapData(dataList: List<T>) {
+        this.dataList = dataList as ArrayList<T>
+        notifyDataSetChanged()
+    }
+
 }

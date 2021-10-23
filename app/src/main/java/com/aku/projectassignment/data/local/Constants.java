@@ -50,6 +50,21 @@ public class Constants {
     };
 
     @NonNull
+    public static String gender[] = {"Gender -- All",
+            "Male",
+            "Female",
+    };
+
+    @NonNull
+    public static String martialStatus[] = {"Marital Status --  All",
+            "Unmarried",
+            "Married",
+            "Divorced",
+            "Widow",
+
+    };
+
+    @NonNull
     public static String occupation[] = {"What is you occupation",
             "Student",
             "Housewife",

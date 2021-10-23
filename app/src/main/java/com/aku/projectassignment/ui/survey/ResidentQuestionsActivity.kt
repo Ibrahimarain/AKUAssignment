@@ -30,6 +30,9 @@ class ResidentQuestionsActivity : BaseActivity<AddResidentViewModel>(){
     override fun setUpView(savedInstanceState: Bundle?) {
         supportActionBar?.title = "Add Resident Details"
 
+        radioGroupGender.check(optionMale.id)
+        radioGroupMaritalStatus.check(optionUnMarried.id)
+
         val datePicker =
             MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Select date")
